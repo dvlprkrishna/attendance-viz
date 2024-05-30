@@ -188,8 +188,11 @@ export const columns: ColumnDef<Attendance>[] = [
     enableSorting: true,
   },
 ];
+type DataTableDemoProps = {
+  data: Attendance[]; // Update type to AttendanceData[]
+};
 
-export function DataTableDemo({ data = initialData }: { data?: Attendance[] }) {
+export function DataTableDemo({ data = initialData }: DataTableDemoProps) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
